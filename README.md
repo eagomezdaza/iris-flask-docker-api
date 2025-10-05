@@ -2,21 +2,31 @@
 ![Python 3.12](https://img.shields.io/badge/python-3.12-blue)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 
+---
 
+# 🌸 API de Clasificación Iris con Flask y Docker
 
-# API de Clasificación Iris con Flask y Docker
+Este proyecto implementa una **API REST para la clasificación de flores Iris** utilizando **Flask**, **Docker** y un modelo **Random Forest** entrenado con *scikit-learn*.  
+El objetivo es demostrar un flujo completo de *MLOps educativo*: desde el entrenamiento hasta la contenedorización y despliegue con verificación de salud.
 
-Este proyecto implementa una API REST contenedorizada con Docker para exponer un modelo de Machine Learning entrenado con scikit-learn.
+Incluye además una **interfaz Streamlit** para pruebas visuales, un **Makefile** para automatizar tareas, y un **pipeline de integración continua (CI)** en GitHub Actions.
 
-Incluye el flujo completo: entrenamiento, serialización, creación de API Flask, interfaz visual en Streamlit, pruebas automáticas y empaquetado para despliegue.
+---
 
-## Objetivo
+## 🎯 Objetivo
 
-Desarrollar una API que permita consumir un modelo de clasificación entrenado, incorporando validación de entradas, manejo de errores y pruebas con datos JSON.
+Desarrollar una API que permita consumir un modelo de clasificación entrenado, incorporando:
+- Validación de entradas JSON.
+- Manejo de errores.
+- Predicciones vía `POST /predict`.
+- Verificación de salud (`GET /health`).
+- Pruebas automáticas y build Docker reproducible.
 
-El dataset utilizado corresponde al clásico Iris Dataset incluido en sklearn.datasets.
+El dataset utilizado corresponde al clásico **Iris Dataset** incluido en `sklearn.datasets`.
 
-## Estructura del proyecto
+---
+
+## 🧱 Estructura del Proyecto
 
 ```
 iris-flask-docker-api/
