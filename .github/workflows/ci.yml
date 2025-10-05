@@ -1,0 +1,35 @@
+name: CI - Build & Health Check
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  docker-healthcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build Docker image
+        run: docker build -t iris-api .
+      - name: Run container
+        run: docker run -d --name irisapi -p 5002:5002 iris-api
+      - name: Wait for API
+        run: |
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:5002/health > /dev/null; then
+              echo "API is up"; exit 0
+            fi
+            sleep 2
+          done
+          echo "API did not become healthy in time"; docker logs irisapi; exit 1
+      - name: Predict smoke test
+        run: |
+          curl -fsS -X POST http://127.0.0.1:5002/predict \
+            -H "Content-Type: application/json" \
+            -d '{"features":[5.1,3.5,1.4,0.2]}' | tee result.json
+          test -s result.json
+      - name: Show container logs (always)
+        if: always()
+        run: docker logs irisapi

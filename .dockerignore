@@ -1,0 +1,45 @@
+# ======================
+# Entornos virtuales
+# ======================
+venv/
+.venv/
+
+# ======================
+# Compilados de Python
+# ======================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# ======================
+# Configuración de editor
+# ======================
+.vscode/
+.idea/
+
+# ======================
+# Archivos del sistema operativo
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# Streamlit (por si usas frontend)
+# ======================
+.streamlit/
+
+# ======================
+# Git
+# ======================
+.git/
+.gitignore
+
+# ======================
+# Otros
+# ======================
+*.ipynb_checkpoints/
+*.env
+
+

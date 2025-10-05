@@ -1,0 +1,50 @@
+# ======================
+# Python / Artefactos
+# ======================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Ignorar pkl por defecto, pero permitir el artefacto principal
+*.pkl
+!modelo.pkl
+
+# ======================
+# Entornos virtuales
+# ======================
+.venv/
+venv/
+
+# ======================
+# Herramientas y pruebas
+# ======================
+.pytest_cache/
+.coverage
+coverage.xml
+
+# ======================
+# Notebooks (por si acaso)
+# ======================
+.ipynb_checkpoints/
+
+# ======================
+# Editor / SO
+# ======================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ======================
+# Streamlit
+# ======================
+.streamlit/
+
+# ======================
+# Configuración/secretos locales
+# ======================
+.env
+.env.*
+
